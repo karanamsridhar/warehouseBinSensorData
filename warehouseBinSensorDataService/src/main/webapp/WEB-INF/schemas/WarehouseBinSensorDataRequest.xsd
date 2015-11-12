@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/WarehouseBinSensorDataRequest" xmlns:tns="http://www.example.org/WarehouseBinSensorDataRequest" elementFormDefault="qualified">
+
+    <element name="WarehouseBinSensorDataRequest"
+    	type="tns:WarehouseBinSensorDataRequest">
+    </element>
+    
+    <complexType name="WarehouseBinSensorDataRequest">
+    	<sequence>
+    		<element name="timestamp" type="string"></element>
+    		<element name="location" type="string"></element>
+    		<element name="warehouse" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="WarehouseBinSensorDataResponse"
+    	type="tns:WarehouseBinSensorDataResponse">
+    </element>
+
+    <complexType name="BinSensorDataRecord">
+    	<sequence>
+    		<element name="location" type="string"></element>
+    		<element name="partNumber" type="string"></element>
+    		<element name="pickType" type="string"></element>
+    		<element name="zone" type="string"></element>
+    		<element name="warehouse" type="string"></element>
+    		<element name="quantity" type="integer"></element>
+    		<element name="weight" type="decimal"></element>
+    		<element name="sensorId" type="integer"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="WarehouseBinSensorDataResponse">
+    	<sequence>
+    		<element name="sensorDataRecords" type="tns:BinSensorDataRecord" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>
