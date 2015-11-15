@@ -31,7 +31,7 @@
 
      <servlet-mapping>  
          <servlet-name>spring-ws</servlet-name>  
-         <url-pattern>/*</url-pattern>  
+         <url-pattern>/endpoints/*</url-pattern>  
     </servlet-mapping> 
 
 </web-app>

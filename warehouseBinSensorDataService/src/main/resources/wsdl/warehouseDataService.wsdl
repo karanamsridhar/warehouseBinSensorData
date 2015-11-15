@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.iot.yash.com/WarehouseBinSensorData" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.iot.yash.com/WarehouseBinSensorData" targetNamespace="http://www.iot.yash.com/WarehouseBinSensorData">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.iot.yash.com/WarehouseBinSensorData">
+
+    <element name="GetWarehouseBinSensorDataRequest" type="tns:GetWarehouseBinSensorDataRequest">
+    </element>
+    
+    <complexType name="GetWarehouseBinSensorDataRequest">
+    	<sequence>
+    		<element name="timestamp" type="string"/>
+    		<element name="location" type="string"/>
+    		<element name="warehouse" type="string"/>
+    	</sequence>
+    </complexType>
+    
+    <element name="GetWarehouseBinSensorDataResponse" type="tns:GetWarehouseBinSensorDataResponse">
+    </element>
+
+    <complexType name="BinSensorDataRecord">
+    	<sequence>
+    		<element name="location" type="string"/>
+    		<element name="partNumber" type="string"/>
+    		<element name="pickType" type="string"/>
+    		<element name="zone" type="string"/>
+    		<element name="warehouse" type="string"/>
+    		<element name="quantity" type="integer"/>
+    		<element name="weight" type="decimal"/>
+    		<element name="sensorId" type="integer"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="GetWarehouseBinSensorDataResponse">
+    	<sequence>
+    		<element maxOccurs="unbounded" minOccurs="0" name="sensorDataRecords" type="tns:BinSensorDataRecord"/>
+    	</sequence>
+    </complexType>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="GetWarehouseBinSensorDataRequest">
+    <wsdl:part element="tns:GetWarehouseBinSensorDataRequest" name="GetWarehouseBinSensorDataRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetWarehouseBinSensorDataResponse">
+    <wsdl:part element="tns:GetWarehouseBinSensorDataResponse" name="GetWarehouseBinSensorDataResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WarehouseBinSensorData">
+    <wsdl:operation name="GetWarehouseBinSensorData">
+      <wsdl:input message="tns:GetWarehouseBinSensorDataRequest" name="GetWarehouseBinSensorDataRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:GetWarehouseBinSensorDataResponse" name="GetWarehouseBinSensorDataResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WarehouseBinSensorDataSoap11" type="tns:WarehouseBinSensorData">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetWarehouseBinSensorData">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetWarehouseBinSensorDataRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetWarehouseBinSensorDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WarehouseBinSensorDataService">
+    <wsdl:port binding="tns:WarehouseBinSensorDataSoap11" name="WarehouseBinSensorDataSoap11">
+      <soap:address location="http://localhost:8080/warehouseBinSensorDataService/endpoints"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
