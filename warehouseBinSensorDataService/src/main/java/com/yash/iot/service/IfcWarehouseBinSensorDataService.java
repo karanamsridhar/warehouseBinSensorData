@@ -1,8 +1,8 @@
 package com.yash.iot.service;
 
-import com.yash.iot.domain.WarehouseBinSensorDataRequest;
-import com.yash.iot.domain.WarehouseBinSensorDataResponse;
+import com.yash.iot.domain.GetWarehouseBinSensorDataRequest;
+import com.yash.iot.domain.GetWarehouseBinSensorDataResponse;
 
 public interface IfcWarehouseBinSensorDataService {
-	public WarehouseBinSensorDataResponse getWarehouseBinSensorData(WarehouseBinSensorDataRequest warehouseBinSensorDataRequest);
+	public GetWarehouseBinSensorDataResponse getWarehouseBinSensorData(GetWarehouseBinSensorDataRequest warehouseBinSensorDataRequest);
 }

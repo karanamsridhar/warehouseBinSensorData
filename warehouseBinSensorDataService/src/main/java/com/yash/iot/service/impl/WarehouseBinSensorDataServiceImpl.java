@@ -2,15 +2,15 @@ package com.yash.iot.service.impl;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
+import org.springframework.stereotype.Service;
 import com.yash.iot.domain.BinSensorDataRecord;
+import com.yash.iot.domain.GetWarehouseBinSensorDataRequest;
+import com.yash.iot.domain.GetWarehouseBinSensorDataResponse;
 import com.yash.iot.domain.ObjectFactory;
-import com.yash.iot.domain.WarehouseBinSensorDataRequest;
-import com.yash.iot.domain.WarehouseBinSensorDataResponse;
 import com.yash.iot.service.IfcWarehouseBinSensorDataService;
 
-public class WarehouseBinSensorDataServiceImpl implements
-		IfcWarehouseBinSensorDataService {
+@Service(value="WarehouseBinSensorDataService")
+public class WarehouseBinSensorDataServiceImpl implements IfcWarehouseBinSensorDataService {
 
 	private static ObjectFactory factory;
 	
@@ -21,8 +21,8 @@ public class WarehouseBinSensorDataServiceImpl implements
 		return factory;
 	}
 	
-	public WarehouseBinSensorDataResponse getWarehouseBinSensorData(WarehouseBinSensorDataRequest warehouseBinSensorDataRequest) {
-		WarehouseBinSensorDataResponse warehouseBinSensorDataResponse = getObjectFactory().createWarehouseBinSensorDataResponse();
+	public GetWarehouseBinSensorDataResponse getWarehouseBinSensorData(GetWarehouseBinSensorDataRequest warehouseBinSensorDataRequest) {
+		GetWarehouseBinSensorDataResponse warehouseBinSensorDataResponse = getObjectFactory().createGetWarehouseBinSensorDataResponse();
 		BinSensorDataRecord record = getObjectFactory().createBinSensorDataRecord();
 		record.setLocation("ABC");
 		record.setPartNumber("112121");

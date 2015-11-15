@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/WarehouseBinSensorDataRequest" xmlns:tns="http://www.example.org/WarehouseBinSensorDataRequest" elementFormDefault="qualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.iot.yash.com/WarehouseBinSensorData" xmlns:tns="http://www.iot.yash.com/WarehouseBinSensorData" elementFormDefault="qualified">
 
-    <element name="WarehouseBinSensorDataRequest"
-    	type="tns:WarehouseBinSensorDataRequest">
+    <element name="GetWarehouseBinSensorDataRequest"
+    	type="tns:GetWarehouseBinSensorDataRequest">
     </element>
     
-    <complexType name="WarehouseBinSensorDataRequest">
+    <complexType name="GetWarehouseBinSensorDataRequest">
     	<sequence>
     		<element name="timestamp" type="string"></element>
     		<element name="location" type="string"></element>
@@ -13,8 +13,8 @@
     	</sequence>
     </complexType>
     
-    <element name="WarehouseBinSensorDataResponse"
-    	type="tns:WarehouseBinSensorDataResponse">
+    <element name="GetWarehouseBinSensorDataResponse"
+    	type="tns:GetWarehouseBinSensorDataResponse">
     </element>
 
     <complexType name="BinSensorDataRecord">
@@ -30,7 +30,7 @@
     	</sequence>
     </complexType>
 
-    <complexType name="WarehouseBinSensorDataResponse">
+    <complexType name="GetWarehouseBinSensorDataResponse">
     	<sequence>
     		<element name="sensorDataRecords" type="tns:BinSensorDataRecord" maxOccurs="unbounded" minOccurs="0"></element>
     	</sequence>
