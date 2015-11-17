@@ -12,6 +12,7 @@
        
 	<context:component-scan base-package="com.yash.iot.service.impl"></context:component-scan>
 	<context:component-scan base-package="com.yash.iot.service.endpoint"></context:component-scan>
+	<context:component-scan base-package="com.yash.iot.dao.impl"></context:component-scan>
     <sws:annotation-driven/>
 
 	<bean id="warehouseDataService" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition">

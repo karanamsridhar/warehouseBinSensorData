@@ -11,6 +11,8 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
@@ -27,7 +29,9 @@ public class FetchWarehouseSensorDataImpl implements IfcFetchWarehouseSensorData
 	private DynamoDB dynamoDB;
 	
 	public FetchWarehouseSensorDataImpl() {
-		 dynamoDB = new DynamoDB(new AmazonDynamoDBClient(new ProfileCredentialsProvider()));
+		AmazonDynamoDBClient client = new AmazonDynamoDBClient(new ProfileCredentialsProvider());
+		client.setRegion(Region.getRegion(Regions.US_WEST_2));
+		dynamoDB = new DynamoDB(client);
 	}
 	
 	
