@@ -1,19 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en" ng-app="warehouseApp">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Spring Web Services Sample</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Warehouse Bin Management System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src= "js/app.js"></script>
 </head>
 <body>
+    <div class="container">
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><strong>Warehouse Bin Management System</strong></a>
+          </div>
+        </div><!--/.container-fluid -->
+      </nav>
 
-<h1>Spring Web Services Sample</h1>
-
-<p>Welcome to the the Spring Web Services Sample</p>
-<p>Visit the WSDL at:</p>
-
-<ul>
-	<li><a href="endpoints/warehouseDataService.wsdl">warehouseDataService.wsdl</a></li>
-</ul>
-
-</body>
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="container-fluid">
+		<ul class="nav nav-tabs">
+		  <li role="presentation" class="active"><a href="#/" class="appHome">Home</a></li>
+		  <li role="presentation"><a href="#/inquiry">Inquiry</a></li>
+		  <li role="presentation"><a href="#/webservices">Webservices</a></li>
+		  <li role="presentation"><a href="#/configuration">Configuration</a></li>
+		</ul>
+      </div>
+      <div ng-view></div>
+    </div> <!-- /container -->
+  </body>
 </html>
