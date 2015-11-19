@@ -31,9 +31,16 @@ warehouseApp.config(function($routeProvider){
 
 warehouseApp.controller("homeController", function($scope){
 	
-	$scope.homeTabClicked
-	
 	$scope.locations = [{pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
+	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
+	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
+	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
+	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
+	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
+	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
+	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
+	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
+	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
 	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"},
 	                    {pickLocation : "A0001", partNumber : "HX0001", pickType : "A", zone : "A", weight : "100.23", fillPercent : "75"}];
 });
@@ -48,4 +55,34 @@ warehouseApp.controller("webservicesController", function($scope){
 
 warehouseApp.controller("configurationController", function($scope){
 	
+});
+
+$(document).ready(function(){
+	$("a[href='#/home']").click(function(){
+		$("a[href='#/home']").parent().addClass("active");
+		$("a[href='#/webservices']").parent().removeClass("active");
+		$("a[href='#/inquiry']").parent().removeClass("active");
+		$("a[href='#/configuration']").parent().removeClass("active");
+	});
+	
+	$("a[href='#/inquiry']").click(function(){
+		$("a[href='#/home']").parent().removeClass("active");
+		$("a[href='#/webservices']").parent().removeClass("active");
+		$("a[href='#/inquiry']").parent().addClass("active");
+		$("a[href='#/configuration']").parent().removeClass("active");
+	});
+	
+	$("a[href='#/webservices']").click(function(){
+		$("a[href='#/home']").parent().removeClass("active");
+		$("a[href='#/webservices']").parent().addClass("active");
+		$("a[href='#/inquiry']").parent().removeClass("active");
+		$("a[href='#/configuration']").parent().removeClass("active");
+	});
+	
+	$("a[href='#/configuration']").click(function(){
+		$("a[href='#/home']").parent().removeClass("active");
+		$("a[href='#/webservices']").parent().removeClass("active");
+		$("a[href='#/inquiry']").parent().removeClass("active");
+		$("a[href='#/configuration']").parent().addClass("active");
+	});
 });
