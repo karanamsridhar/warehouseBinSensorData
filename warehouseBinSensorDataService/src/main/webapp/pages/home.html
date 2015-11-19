@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped table-hover table-bordered">
 	<tr>
 		<th>Pick Location</th>
 		<th>Part Number</th>
@@ -8,4 +8,14 @@
 		<th>Fill Percent</th>
 		<th></th>
 	</tr>
+	<tr ng-repeat="location in locations">
+		<td>{{location.pickLocation}}</td>
+		<td>{{location.partNumber}}</td>
+		<td>{{location.pickType}}</td>
+		<td>{{location.zone}}</td>
+		<td>{{location.weight}}</td>
+		<td>{{location.fillPercent}}</td>
+		<td><button type="button" class="btn btn-primary">Repelenish</button></td>
+	</tr>
 </table>      
+
