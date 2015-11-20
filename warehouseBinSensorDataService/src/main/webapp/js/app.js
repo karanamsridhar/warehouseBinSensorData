@@ -9,19 +9,19 @@ var warehouseApp = angular.module("warehouseApp", ["ngRoute"]);
 warehouseApp.config(function($routeProvider){
 	$routeProvider
 	.when("/", {
-		templateUrl : "/warehouseBinSensorDataService/pages/home.html",
+		templateUrl : "pages/home.html",
 		controller : "homeController"
 	})
 	.when("/inquiry", {
-		templateUrl : "/warehouseBinSensorDataService/pages/inquiry.html",
+		templateUrl : "pages/inquiry.html",
 		controller : "inquiryController"
 	})
 	.when("/webservices", {
-		templateUrl : "/warehouseBinSensorDataService/pages/webservices.html",
+		templateUrl : "pages/webservices.html",
 		controller : "webservicesController"
 	})
 	.when("/configuration", {
-		templateUrl : "/warehouseBinSensorDataService/pages/configuration.html",
+		templateUrl : "pages/configuration.html",
 		controller : "configurationController"
 	})
 	.otherwise({
